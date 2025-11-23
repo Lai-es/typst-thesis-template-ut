@@ -1,4 +1,12 @@
 [package]
-name = "example"
+name = "ut-thesis-clean"
 version = "0.1.0"
-entrypoint = "lib.typ"
+entrypoint = "source/lib.typ"
+authors = [
+	"Elias Riedling <https://github.com/Lai-es/>"
+]
+license = "MIT"
+repository = "https://github.com/Lai-es/typst-thesis-template-ut"
+keywords = ["Bachelorarbeit", "Masterarbeit", "aio", "thesis"]
+categories = ["thesis"]
+compiler = "0.13.1"
