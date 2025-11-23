@@ -1,4 +1,4 @@
-#let introduction()=
+#let introduction()=[
 
 #lorem(50)
 
