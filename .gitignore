@@ -1,0 +1,18 @@
+# Test artifacts
+test_document.typ
+test_output.pdf
+test_functions.pdf
+
+# Typst build output
+*.pdf
+
+# Editor artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS artifacts
+.DS_Store
+Thumbs.db

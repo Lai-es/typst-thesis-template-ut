@@ -1,3 +1,5 @@
+#import "../../source/lib.typ": caption, subfigure
+
 #let results()=[
 
 #lorem(100)

@@ -1,4 +1,6 @@
 //-------------------custom functions-------------------
+#import "@preview/subpar:0.2.2"
+
 #let in-outline = state("in-outline", false)
 
 #let caption(short, details) = context {
@@ -42,7 +44,6 @@ body
               )= context{[
 
 #import "@preview/hydra:0.6.2": hydra
-#import "@preview/subpar:0.2.2": *
 
 //======page formatting============================
 #set page(margin: (x: 2.5cm, y: 2.5cm),
