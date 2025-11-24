@@ -6,7 +6,7 @@ authors = [
 	"Elias Riedling <https://github.com/Lai-es/>"
 ]
 license = "MIT"
-description = "Clean thesis template for bachelor and master theses with automatic bibliography, subfigures, and custom captions"
+description = "Clean thesis template for bachelor and master theses in the field of life sciences with automatic bibliography, subfigures, and custom captions"
 repository = "https://github.com/Lai-es/typst-thesis-template-ut"
 keywords = ["Bachelorarbeit", "Masterarbeit", "aio", "thesis"]
 categories = ["thesis"]
