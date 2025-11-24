@@ -1,4 +1,7 @@
-#import "source/lib.typ": *
+// Import the template library
+// Note: This imports from the local lib.typ in the template directory,
+// which allows the template to work standalone.
+#import "lib.typ": *
 
 #import "chapters/1 title-page.typ": title-page
 #import "chapters/2 declaration.typ": declaration

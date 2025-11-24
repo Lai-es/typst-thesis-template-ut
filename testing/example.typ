@@ -1,4 +1,5 @@
-#import "source/lib.typ": *
+// This example imports from template/lib.typ (package entrypoint)
+#import "template/lib.typ": *
 
 // Import chapter functions
 #import "template/chapters/1 title-page.typ": *

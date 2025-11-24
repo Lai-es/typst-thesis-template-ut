@@ -9,8 +9,20 @@ This template is designed to write final theses in the field of life sciences wi
 
 ## Getting started
 
-This template is used best with the "Start from template"-option in the Typst web-app, since all files are then automatically added.
-When the template is published to the package repository, the following typst-code will be able to kickstart the template:
+### Option 1: Start from Template (Recommended for beginners)
+
+This template works best with the "Start from template" option in the Typst web app:
+
+1. Go to https://typst.app
+2. Click "Start from template"
+3. Search for "ut-thesis-clean" (once published)
+4. All template files will be automatically copied to your project
+
+The template includes a local copy of `lib.typ` so it works immediately without any additional setup. Simply edit `main.typ` and the chapter files to write your thesis.
+
+### Option 2: Import as Package (Advanced)
+
+When the template is published to the package repository, you can also import just the template functions and create your own structure:
 
 ```typ
 #import "@preview/ut-thesis-clean:0.1.0": *
@@ -42,6 +54,20 @@ bibliography: bibliography(),
 appendix: appendix()
 )
 ```
+
+### Local Testing
+
+To test the template locally before publication:
+
+```bash
+# From the repository root
+bash testing/test.sh
+
+# Test standalone template (simulates "Start from template")
+bash testing/test_template_standalone.sh
+```
+
+See `testing/TESTING.md` and `TEMPLATE_PUBLICATION_GUIDE.md` for detailed testing and publication instructions.
 
 ## Custom functions
 

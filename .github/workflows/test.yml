@@ -30,8 +30,8 @@ jobs:
         
     - name: Run test script
       run: |
-        chmod +x test.sh
-        ./test.sh
+        chmod +x testing/test.sh
+        bash testing/test.sh
         
     - name: Upload test artifacts
       if: always()

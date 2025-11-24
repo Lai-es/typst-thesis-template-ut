@@ -34,7 +34,7 @@ echo "Installed version: $TYPST_VERSION"
 # Check for required files
 echo -e "\n${YELLOW}3. Checking required files...${NC}"
 REQUIRED_FILES=(
-    "source/lib.typ"
+    "template/lib.typ"
     "typst.toml"
     "template/chapters/1 title-page.typ"
     "template/chapters/2 declaration.typ"
@@ -83,7 +83,7 @@ echo -e "${BLUE}Ensure you have internet connectivity for the first run.${NC}"
 # Create a test document
 echo -e "\n${YELLOW}5. Creating test document...${NC}"
 cat > test_document.typ << 'EOF'
-#import "source/lib.typ": *
+#import "template/lib.typ": *
 
 // Import chapter functions
 #import "template/chapters/1 title-page.typ": *
@@ -137,7 +137,7 @@ if typst compile test_document.typ test_output.pdf 2>&1; then
     # Test custom functions
     echo -e "\n${YELLOW}7. Testing custom functions...${NC}"
     cat > test_functions.typ << 'EOF'
-#import "source/lib.typ": caption, todo, subfigure
+#import "template/lib.typ": caption, todo, subfigure
 
 // Test caption function
 #figure(

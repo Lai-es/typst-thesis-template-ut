@@ -4,15 +4,21 @@ This document explains how to test the Typst thesis template to verify that all 
 
 ## Quick Start
 
-To verify that all dependencies work and the project is coherent, run the included test script:
+To verify that all dependencies work and the project is coherent, run the included test scripts:
 
 ```bash
-./test.sh
+# Test complete repository structure (from root directory)
+bash testing/test.sh
+
+# Test standalone template (simulates "Start from template")
+bash testing/test_template_standalone.sh
 ```
 
-## What the Test Script Does
+## What the Test Scripts Do
 
-The test script performs the following checks:
+### Main Test Script (`test.sh`)
+
+The main test script performs the following checks:
 
 1. **Typst Installation Check** - Verifies that Typst is installed and accessible
 2. **Version Compatibility** - Checks the installed Typst version against the required version
@@ -20,6 +26,19 @@ The test script performs the following checks:
 4. **Dependency Detection** - Lists all external package dependencies
 5. **Template Compilation** - Compiles a test document using the template
 6. **Custom Functions** - Tests all custom functions (caption, todo, subfigure)
+
+### Standalone Template Test (`test_template_standalone.sh`)
+
+This test simulates what users get when they "Start from template":
+
+1. **Isolation** - Creates a temporary directory with only template files
+2. **File Verification** - Ensures all necessary files are copied
+3. **Path Validation** - Checks that all import paths are relative and correct
+4. **Standalone Check** - Verifies the template works without the full repository structure
+
+Both tests are important:
+- `test.sh` validates the complete repository
+- `test_template_standalone.sh` validates the user experience
 
 ## Requirements
 
@@ -142,7 +161,7 @@ You can also test individual custom functions:
 ### Caption Function
 
 ```typ
-#import "source/lib.typ": caption
+#import "template/lib.typ": caption
 
 #figure(
   rect(width: 50%, height: 50pt),
@@ -153,7 +172,7 @@ You can also test individual custom functions:
 ### TODO Function
 
 ```typ
-#import "source/lib.typ": todo
+#import "template/lib.typ": todo
 
 #todo[This is a TODO item]
 ```
@@ -161,7 +180,7 @@ You can also test individual custom functions:
 ### Subfigure Function
 
 ```typ
-#import "source/lib.typ": subfigure, caption
+#import "template/lib.typ": subfigure, caption
 
 #subfigure(
   columns: 2,

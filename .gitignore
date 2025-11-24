@@ -3,6 +3,10 @@ test_document.typ
 test_output.pdf
 test_functions.pdf
 
+# Build artifacts
+typst.tar.xz
+typst-x86_64-unknown-linux-musl/
+
 # Editor artifacts
 .vscode/
 .idea/

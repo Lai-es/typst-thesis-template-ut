@@ -1,4 +1,4 @@
-#import "../../source/lib.typ": caption, subfigure
+#import "../lib.typ": caption, subfigure
 
 #let results()=[
 
