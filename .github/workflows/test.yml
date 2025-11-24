@@ -1,0 +1,45 @@
+name: Test Template
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+env:
+  TYPST_VERSION: "0.13.1"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Install Typst
+      run: |
+        curl -fsSL https://github.com/typst/typst/releases/download/v${{ env.TYPST_VERSION }}/typst-x86_64-unknown-linux-musl.tar.xz -o typst.tar.xz
+        tar -xf typst.tar.xz
+        sudo mv typst-x86_64-unknown-linux-musl/typst /usr/local/bin/
+        typst --version
+        
+    - name: Run test script
+      run: |
+        chmod +x test.sh
+        ./test.sh
+        
+    - name: Upload test artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-artifacts
+        path: |
+          test_document.typ
+          test_output.pdf
+          test_functions.pdf
+        if-no-files-found: ignore

@@ -9,7 +9,7 @@ This template is designed to write final theses in the field of life sciences wi
 
 ## Getting started
 
-The following typst-code will be able to kickstart the template in the future
+When the template is published to the package repository, the following typst-code will be able to kickstart the template:
 
 ```typ
 #import "@preview/ut-thesis-clean:0.1.0": *
@@ -47,3 +47,12 @@ caption: [caption describing the whole figure, including subfigures]
 ```
 
 Note that this does **not** allow for captioning of the subfigures directly, but instead requires a description in the total figure caption
+
+## Testing
+
+To verify that all dependencies work and the project is coherent, see [TESTING.md](TESTING.md) for detailed testing instructions.
+
+Quick test:
+```bash
+./test.sh
+```
